@@ -114,7 +114,7 @@ public class WordChecker {
         Set<String> result = new HashSet<>();
         for (int i = 0; i < word.length(); i++){
             for (char c : alphabet){
-                String temp = word.replace(word.charAt(i), c);
+                String temp = new StringBuilder(word).replace(i, i+1, String.valueOf(c)).toString();
                 if (wordExists(temp)){
                     result.add(temp);
                 }
